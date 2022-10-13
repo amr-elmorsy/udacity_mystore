@@ -14,8 +14,9 @@
       <input
         min="1"
         type="number"
-        name="edtCount"
         id="edtCount"
+        name="edtCount"
+        (change)="productChanged(product)"
         [(ngModel)]="product.count"
       />
     </p>

@@ -21,4 +21,7 @@ export class ProductListComponent implements OnInit {
     });
   }
 
+  productCountChanged(event:IProduct){
+     
+  }
 }

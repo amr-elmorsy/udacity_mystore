@@ -33,9 +33,11 @@ export class CartComponent implements OnInit {
     this.router.navigate(['/confirmation']);
   }
 
-  countChanged(product: IProduct) {
-    if ((product.count || 0) <= 0) {
+  countChanged(product:IProduct, event:any) {
+ 
+    if ((parseInt( event) || 0) <= 0) {
       this.cart = this.cart.filter(item => item.id != product.id);
+      this.prodServ.cart = this.cart;
     }
 
     this.CartChanged();

@@ -39,9 +39,11 @@
               class="form-control"
               id="creditCard"
               name="creditCard"
+              ngModel
               [(ngModel)]="crNumber"
               required
               minlength="16"
+              maxlength="16"
               placeholder="(16-digit number)"
             />
             <small id="emailHelp" class="form-text text-muted"
@@ -52,7 +54,7 @@
           <button
             type="submit"
             class="btn btn-primary m-2s"
-            [disabled]="form.invalid && cart.length <= 0"
+            [disabled]="form.invalid || cart.length <= 0"
           >
             Submit
           </button>
@@ -87,7 +89,7 @@
                       type="number"
                       name="edtCount"
                       id="edtCount"
-                      (change)="countChanged(product)"
+                      (ngModelChange)="countChanged(product,$event)"
                       [(ngModel)]="product.count"
                     />
                   </p>

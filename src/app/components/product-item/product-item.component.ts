@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { IProduct } from 'src/app/models/product.model';
 import { ProductsService } from 'src/app/services/products.service';
 
@@ -15,6 +15,7 @@ export class ProductItemComponent implements OnInit {
     url: '',
     description: ''
   };
+  @Output() countChanged:EventEmitter<IProduct> = new EventEmitter;
 
   constructor(private prodServ: ProductsService) { }
 
@@ -23,6 +24,10 @@ export class ProductItemComponent implements OnInit {
 
   addProductToCart( product : IProduct){
     this.prodServ.addProductToCart(product);
+  }
+
+  productChanged(product : IProduct){
+    this.countChanged.emit(product);
   }
 
 }
