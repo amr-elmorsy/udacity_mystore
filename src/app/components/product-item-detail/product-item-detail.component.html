@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="content">
+  <div class="container p-2">
+    <div class="row">
+      <div class="col-6">
+        <img
+          src="{{ product.url }}"
+          class="card-img-top"
+          style="max-height: 400px; object-fit: contain"
+          alt="..."
+        />
+      </div>
+      <div class="col-6">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <h5 class="card-title">{{ product.price }} $</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <p class="card-text">
+            <input
+              min="1"
+              type="number"
+              name="edtCount"
+              id="edtCount"
+              [(ngModel)]="product.count"
+            />
+          </p>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="addProductToCart(product)"
+          >
+            Add To Cart
+          </button>
+        </div>
+
+        <a routerLink="/"><- back to products list</a>
+      </div>
+    </div>
+  </div>
+</div>

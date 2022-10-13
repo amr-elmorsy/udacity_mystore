@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="content">
+  <div class="center">
+    <div *ngIf="isValidData(); else noOrderFound">
+      <div class="row">
+        <div class="col justify-content-center text-center">
+          <h2 class="confirmation-header text-center">Success!</h2>
+          <h5>
+            Thank you, <b>{{ fullName }}</b>
+          </h5>
+          <h5>
+            Your <b>{{ totalValue }}</b> order is confirmed!
+          </h5>
+          <h5>please allow 1-3 business day(s) for shipping.</h5>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #noOrderFound> Sorry, No valid order found. </ng-template>
+
+    <br />
+
+    <a class="btn btn-primary" routerLink="/"><- back to products list</a>
+  </div>
+</div>

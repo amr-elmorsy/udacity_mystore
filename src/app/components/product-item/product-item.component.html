@@ -1,0 +1,30 @@
+<div class="card" style="width: 18rem">
+  <a routerLink="product/{{ product.id }}"
+    ><img
+      src="{{ product.url }}"
+      class="card-img-top"
+      style="max-width: 400px"
+      alt="..."
+  /></a>
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <h5 class="card-title">{{ product.price }} $</h5>
+    <p class="card-text">{{ product.description }}</p>
+    <p class="card-text">
+      <input
+        min="1"
+        type="number"
+        name="edtCount"
+        id="edtCount"
+        [(ngModel)]="product.count"
+      />
+    </p>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="addProductToCart(product)"
+    >
+      Add To Cart
+    </button>
+  </div>
+</div>

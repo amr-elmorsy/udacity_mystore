@@ -1,0 +1,28 @@
+.header {
+  text-align: center;
+  background: #33B5E5;
+  color: #fff;
+  padding: 12px;
+  display: block;
+  min-height: 100px;
+}
+
+.header-caption{
+  font-size: larger;
+  font-weight: bold;
+}
+
+a {
+  color: #ffffff;
+}
+
+.nav-holder{
+  margin-top: 10px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
