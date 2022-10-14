@@ -15,7 +15,7 @@ export class ProductItemComponent implements OnInit {
     url: '',
     description: ''
   };
-  @Output() countChanged:EventEmitter<IProduct> = new EventEmitter;
+  @Output() _addProductToCart:EventEmitter<IProduct> = new EventEmitter;
 
   constructor(private prodServ: ProductsService) { }
 
@@ -23,11 +23,9 @@ export class ProductItemComponent implements OnInit {
   }
 
   addProductToCart( product : IProduct){
-    this.prodServ.addProductToCart(product);
+    this._addProductToCart.emit(product);
   }
 
-  productChanged(product : IProduct){
-    this.countChanged.emit(product);
-  }
+  
 
 }

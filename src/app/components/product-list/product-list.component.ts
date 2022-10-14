@@ -21,7 +21,7 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  productCountChanged(event:IProduct){
-     
+  _addProductToCart(event:IProduct){
+     this.prodServ.addProductToCart(event);
   }
 }
